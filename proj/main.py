@@ -1,5 +1,5 @@
 from airport import Airport
-from chromosome import Chromosome
+from chromosome import Chromosome, generate_chromosome
 
 def main():
     #list of airports location
@@ -13,10 +13,13 @@ def main():
     #     Airport(name=f"A {i}", flow=10, capacity=20) for i  in range(1, 16)
     # ]
 
-    chromosome = Chromosome.generate_chromosome(3, airports)
+    chromosome = generate_chromosome(3, airports)
     print("Before repair")
     chromosome.print_genes()
     chromosome.repair_module()
 
     print("After repair")
     chromosome.print_genes()
+    
+if __name__ == '__main__':
+    main()
